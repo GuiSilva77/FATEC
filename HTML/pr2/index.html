@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap</title>
+    <!-- CSS only -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-sm navbar-light">
+      <div class="container-fluid">
+        <a class="nav-brand" href="#nav"
+          ><img src="https://siga.cps.sp.gov.br/siga_40_negativo_verm.png"
+        /></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="row container-fluid m-0 p-0">
+            <div class="col-sm-11">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <div class="dropdown">
+                    <a
+                      id="dropdownCadastro"
+                      role="button"
+                      class="nav-link active dropdown-toggle text-light"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                      aria-current="page"
+                      href="#"
+                      >Cadastro</a
+                    >
+                    <ul
+                      class="dropdown-menu"
+                      aria-labelledby="dropdownCadastro"
+                    >
+                      <li>
+                        <a class="dropdown-item" href="">Cadastrar Cliente</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="">Cadastrar Produto</a>
+                      </li>
+                      <li>
+                        <a class="dropdown-item" href="">Cadastrar Venda</a>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" href="#">Vendas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active text-light" href="#">Perfil</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="col-sm-1 d-flex m-0 p-0">
+              <div
+                class="btn-group flex-fill justify-content-center align-items-center"
+              >
+                <i
+                  id="icnConta"
+                  type="button"
+                  class="bi bi-person-circle"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                ></i>
+                <ul class="dropdown-menu dropdown-menu-sm-end">
+                  <li>
+                    <button class="dropdown-item" type="button">Perfil</button>
+                  </li>
+                  <li>
+                    <button class="dropdown-item" type="button">
+                      Configurações
+                    </button>
+                  </li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li>
+                    <button class="dropdown-item" type="button">Sair</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="vst_flex-row vst-justify-content-space-between vst_margin30">
+      <div class="card vst_marginright30">
+        <div class="card-body">
+          <h5 class="card-title">SIGA</h5>
+          <p class="card-text">
+            O Sistema Integrado de Gestão Acadêmica é um produto do Centro Paula
+            Souza, desenvolvido para oferecer recursos administrativos e de
+            gestão para suas Faculdades de Tecnologia e Escolas Técnicas
+            Estaduais.
+          </p>
+        </div>
+      </div>
+
+      <div class="card vst_marginright30">
+        <div class="card-body">
+          <h5 class="card-title">DIMENSÃO</h5>
+          <p class="card-text">
+            O sistema é utilizado por 100 Unidades de Ensino e um público de 105
+            mil alunos. O sistema possui uma taxa de acesso diária de 1,5 milhão
+            de solicitações.
+          </p>
+        </div>
+      </div>
+
+      <div class="card vst_marginright30">
+        <div class="card-body">
+          <h5 class="card-title">ARQUITETURA</h5>
+          <p class="card-text">
+            O sistema é desenvolvido em módulos, cada qual atendendo a um
+            público específico de usuários e funcionalidades. O sistema é
+            corporativo com sua base de dados integrada, tendo sido projetada
+            para permitir a redução do retrabalho, e os processos são simples de
+            serem executados.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- o que é o siga -->
+    <div class="vst_flex-row vst-justify-content-space-between vst_margin30">
+      <div class="card" style="width: 30%">
+        <div class="card-body">
+          <h5 class="card-title">STATUS</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+
+      <div style="width: 60%">
+        <div class="card-body">
+          <h5 class="card-title">COMO ACESSAR</h5>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">CANDIDATOS VESTIBULAR</h6>
+              <p class="card-text">
+                A consulta e operação do sistema de matricula remota dos
+                candidatos do vestibular 20202.
+              </p>
+              <a
+                href="https://www.vestibularfatec.com.br/home/"
+                target="_blank"
+                class="btn btn-primary"
+                >VESTIBULAR</a
+              >
+              <a
+                href="https://www.vestibulinhoetec.com.br/home/"
+                target="_blank"
+                class="btn btn-primary"
+                >VESTIBULINHO</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/aluno16/matricularemota.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >MATRICULA</a
+              >
+            </div>
+          </div>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">ALUNOS</h6>
+              <p class="card-text">
+                Os alunos ingressam no sistema a partir de uma interface
+                específica.
+              </p>
+              <a
+                href="https://siga.cps.sp.gov.br/ALUNO/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >FATEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/aluno/loginEtec.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >ETEC</a
+              >
+            </div>
+          </div>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">DIRETORIA ACADÊMICA</h6>
+              <p class="card-text">
+                Cada diretoria acadêmica possui um acesso distinto.
+              </p>
+              <a
+                href="https://siga.cps.sp.gov.br/fatec/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >FATEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/siga/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >ETEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/aluno16/gestaomatricularemota.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >MATRICULA</a
+              >
+            </div>
+          </div>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">PROFESSORES</h6>
+              <p class="card-text">
+                Os professsores devem realizar suas atividades operacionais no
+                sistema SIGA
+              </p>
+              <a
+                href="https://siga.cps.sp.gov.br/fatec/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >FATEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/siga/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >ETEC</a
+              >
+            </div>
+          </div>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">COORDENADORES DE CURSO</h6>
+              <p class="card-text">
+                Os coordenadores de curso podem ingressar em dois módulos
+                distintos. Atividades operacionais são realizadas no SIGA e
+                consultas gerenciais no WISE.
+              </p>
+              <a
+                href="https://siga.cps.sp.gov.br/fatec/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >FATEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/siga/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >ETEC</a
+              >
+              <a
+                href="https://siga.cps.sp.gov.br/wise/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >WISE</a
+              >
+            </div>
+          </div>
+
+          <div class="card vst_marginbottom10" style="width: 90%">
+            <div class="card-body">
+              <h6 class="card-title">DIRETORES E GESTORES INSTITUCIONAIS</h6>
+              <p class="card-text">
+                Os gestores institucionais acessam o sistema por meio de uma
+                interface específica para realizar consultas gerenciais e
+                estratégicas.
+              </p>
+              <a
+                href="https://siga.cps.sp.gov.br/wise/login.aspx"
+                target="_blank"
+                class="btn btn-primary"
+                >WISE</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- o que é o siga -->
+    <div class="vst_flex-row vst-justify-content-space-between vst_margin30">
+      <div class="card-body">
+        <h5 class="card-title">OBTENDO AJUDA:</h5>
+
+        <div class="card vst_marginbottom10">
+          <div class="card-body">
+            <h6 class="card-title">PROFESSORES E ALUNOS: Suporte Teams</h6>
+            <p class="card-text">
+              Neste canal você encontra materiais de apoio que ajudam a
+              solucionar suas dúvidas.
+            </p>
+            <a
+              href="https://www.cps.sp.gov.br/duvidas-aulas-online/"
+              target="_blank"
+              class="btn btn-primary"
+              >SUPORTE TEAMS</a
+            >
+          </div>
+        </div>
+
+        <div class="card vst_marginbottom10">
+          <div class="card-body">
+            <h6 class="card-title">DIRETORAS ACADÊMICAS</h6>
+            <p class="card-text">
+              Os canais para atendimento do pessoal da diretoria acadêmica é
+              realizado pelos canais whatsapp: SIGA-AVISOS, DSA´s FATEC e
+              Suporte SIGA ETEC.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer
+      class="footer fixed-bottom bg-light"
+      style="height: 50px; width: 100%"
+    >
+      Footer
+    </footer>
+    <!-- JavaScript Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

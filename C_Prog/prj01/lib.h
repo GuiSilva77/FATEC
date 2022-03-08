@@ -4,7 +4,7 @@
 #include <locale.h>
 #include <time.h>
 
-//declaraÃ§Ã£o do tipo conta corrente
+//declaração do tipo conta corrente
 struct tipo_conta {
   char *nome;
   int cpf;
@@ -17,7 +17,7 @@ struct tipo_conta {
 
 typedef struct tipo_conta Cliente;
 
-//declaraÃ§Ã£o dos protÃ³tipos das funÃ§Ãµes
+//declaração dos protótipos das funções
 int dashboard(Cliente **lista);
   void cadastrar_cliente(Cliente **lista); //v
   void acessar_conta(Cliente **lista);  //v
@@ -43,7 +43,7 @@ void limpar_lista(Cliente *lista); //v
 char* inputString();
 void limpar_buffer();
 
-//funÃ§Ã£o da area de trabalho
+//função da area de trabalho
 int dashboard(Cliente **lista)
 {
   int opcao = 0;
@@ -58,12 +58,12 @@ int dashboard(Cliente **lista)
     "%s"
     "------------------------------------------------------\n\n"
     "                       Banco BR                       \n\n"
-    "Digite a opÃ§Ã£o desejada:\n"
+    "Digite a opção desejada:\n"
     "1 - Cadastrar Conta\n"
     "2 - Acessar Conta\n"
     "3 - Deposito\n"
     "4 - Sair\n"
-    "\n\nOpÃ§Ã£o: ", ctime(&curtime)
+    "\n\nOpção: ", ctime(&curtime)
   );
   scanf("%d", &opcao);
   } while (opcao < 1 || opcao > 4);
@@ -83,7 +83,7 @@ int dashboard(Cliente **lista)
     case 4:
       return 0;
     default:
-      printf("OpÃ§Ã£o invÃ¡lida!\n");
+      printf("Opção inválida!\n");
       getchar();
       break;
   }
@@ -152,7 +152,7 @@ void adicionar_no(Cliente **lista, Cliente *novo)
 
 int gerar_conta_corrente(Cliente *lista)
 {
-  //criar um inteiro aleatorio de 6 digitos, que nÃ£o se reÃ­ta com o que jÃ¡ existe
+  //criar um inteiro aleatorio de 6 digitos, que não se reíta com o que já existe
   int conta_corrente = 0;
   int flag = 0;
   srand(time(NULL));
@@ -196,7 +196,7 @@ void remover_no(Cliente **lista, int cpf)
   }
 
   if (aux == NULL) {
-    printf("Cliente nÃ£o encontrado!\n"); fflush(stdin);
+    printf("Cliente não encontrado!\n"); fflush(stdin);
     getchar();
   } else {
     if (ant == NULL) {
@@ -231,7 +231,7 @@ void acessar_conta(Cliente **lista)
   cliente = buscar_no(*lista, conta_corrente, 0);
 
   if (cliente == NULL) {
-    printf("Conta nÃ£o encontrada!\n"); getchar();
+    printf("Conta não encontrada!\n"); getchar();
     getchar();
   } else {
     if (cliente->senha != senha) {
@@ -257,16 +257,16 @@ void menu_conta(Cliente *cliente, Cliente *lista)
     "%s"
     "------------------------------------------------------\n\n"
     "                       Banco BR                       \n\n"
-    "OlÃ¡ %s, seja bem vindo a sua conta!\n\n", ctime(&curtime), cliente->nome
+    "Olá %s, seja bem vindo a sua conta!\n\n", ctime(&curtime), cliente->nome
   );
   printf(
-    "Digite a opÃ§Ã£o desejada:\n"
+    "Digite a opção desejada:\n"
     "1 - Consultar saldo\n"
     "2 - Saque\n"
     "3 - Transferencia\n"
-    "4 - PoupanÃ§a\n"
+    "4 - Poupança\n"
     "5 - Sair\n"
-    "\n\nOpÃ§Ã£o: "
+    "\n\nOpção: "
   );
   scanf("%d", &opcao);
 
@@ -297,7 +297,7 @@ void consultar_saldo(Cliente *cliente, int opcao)
   if (opcao == 1) {
     printf("Saldo da conta corrente: R$ %.2f\n", cliente->saldo_conta_corrente); limpar_buffer();
   } else {
-    printf("Saldo da conta poupanÃ§a: R$ %.2f\n", cliente->saldo_conta_poupanca); limpar_buffer();
+    printf("Saldo da conta poupança: R$ %.2f\n", cliente->saldo_conta_poupanca); limpar_buffer();
   }
 }
 
@@ -364,7 +364,7 @@ void transferencia(Cliente *cliente, Cliente *lista)
   cliente_destino = buscar_no(lista, conta_corrente_destino, 0);
 
   if (cliente_destino == NULL) {
-    printf("Conta nÃ£o encontrada!\n"); getchar();
+    printf("Conta não encontrada!\n"); getchar();
   } else {
     printf("Digite o valor da transferencia: ");
     scanf("%d", &valor);
@@ -400,13 +400,13 @@ void menu_poupanca(Cliente *cliente)
     "                       Banco BR                       \n\n", ctime(&curtime)
   );
   printf(
-    "PoupanÃ§a:\n\n"
-    "Digite a opÃ§Ã£o desejada:\n"
+    "Poupança:\n\n"
+    "Digite a opção desejada:\n"
     "1 - Consultar saldo\n"
     "2 - Transferir para conta poupanca\n"
     "3 - Transferir para conta corrente\n"
     "4 - Sair\n"
-    "\n\nOpÃ§Ã£o: "
+    "\n\nOpção: "
   );
   scanf("%d", &opcao);
 
@@ -517,7 +517,7 @@ void deposito(Cliente *lista)
   Cliente *cliente_destino = buscar_no(lista, conta_corrente_destino, 0);
 
   if (cliente_destino == NULL) {
-    printf("Conta nÃ£o encontrada!\n"); getchar(); return;
+    printf("Conta não encontrada!\n"); getchar(); return;
   } else {
     printf("Digite o valor do deposito: ");
     scanf("%d", &valor);
@@ -551,7 +551,7 @@ void listar_clientes(Cliente *lista)
     printf("CPF: %d\n", aux->cpf);
     printf("Conta corrente: %d\n", aux->conta_corrente);
     printf("Saldo da conta corrente: R$ %.2f\n", aux->saldo_conta_corrente);
-    printf("Saldo da conta poupanÃ§a: R$ %.2f\n", aux->saldo_conta_poupanca);
+    printf("Saldo da conta poupança: R$ %.2f\n", aux->saldo_conta_poupanca);
     printf("Senha: %d\n", aux->senha);
     printf("\n");
     system("pause");

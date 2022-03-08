@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#icnConta {
+  font-size: 26px;
+}
+
+nav {
+  background-color: #a3130d;
+  color: #fff;
+}
+
+a::hover {
+  background-color: #b3413e;
+}
