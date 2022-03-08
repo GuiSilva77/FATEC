@@ -1,0 +1,82 @@
+passagem de parâmetro vetor ou matriz
+
+int main() 
+{
+  int v[10];
+  mostra(v);
+}
+
+void mostra(int p[] /* ou *p */)
+{
+  for (int i = 0; i < 10; i++)
+    printf("v[%d]" = %d, i, p[i]);
+}
+
+- vetor é uma figura estática e seus dados são dinâmicos
+
+- no caso da matriz uma das ordenadas deve ser informada
+
+- quadrado mágico
+  - é um jogo
+    resp:
+      - é quadrado mágico;
+      - não é quadrado mágico;
+    r: por que o Takeda pediu esse exercício?
+    
+    - regras:
+      - os números não se repetem
+      - não pode ter outras soluções
+      - as somas das linhas, colunas e das diagonais principais e secundárias
+        são 369
+
+  - exercício de semana passada = exercicio.c
+
+ponteiros
+  - tem a função de apontar para um endereço de memória
+  - operadores: 
+	  - * 
+		  - tem a função de  declarar um ponteiro
+		  - operador de acesso - permite acessar um dado com base em um endereço de memória
+	
+	  - & retorna o endereço de memória da variável associada
+  - utilização:
+  int main()
+  {
+    char c;
+    char *p; // declaração do ponteiro
+    c = 'a';
+
+    printf("O valor de C = %c\n o endereco C = %x\n\n", c, &c);
+    p = &c;
+
+    printf("O valor apontado por p = %c\n o valor de p = %p\n o endereco de p = %p", *p, p, &p);
+  }
+
+  - modo 2 -acessando diretamente um endereço de memória
+    biblioteca stdlib.h
+      - malloc:
+        - memory allocation - é responsável por solicitar um endereço de memória para o SO;
+        - precisa informar o tamanho em bytes do espaço de memória;
+        - retorno pode ser NULL ou endereço de memória;
+      - NULL - representa endereço 0x0000;
+      - sizeof() - retorna o tamanho de um tipo em bytes;
+      - ex: float *p = (float* )malloc(sizeof(float));
+        - NULL - deu erro, sem memória;
+        - endereço - alocação realizada com sucesso;
+      - free(endereço) - desaloca a variável apontada, liberando o espaço; 
+      - ex:
+        int main()
+        {
+          float *p;
+
+          p = (float* )malloc(sizeof(float));
+          if (p == NULL)
+            printf("Sem memoria\n");
+          else {
+            *p = 20;
+            printf("O valor apontado por p = %f\n O endereco apontado por p = %p\n O endereco de p = %p\n ", *p, p, &p);
+          }
+
+          free(p);
+          return 0;
+        }
