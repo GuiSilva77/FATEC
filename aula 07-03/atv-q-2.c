@@ -134,10 +134,10 @@ int validar_quadrado(int mat[LINHA][COLUNA])
 	if (soma != (soma_colunas[0] * COLUNA)) flag = 0;
 	// verifica se a soma das diagonais é igual em ambas as diagonais
 	if (soma_diagonalP != soma_diagonalS) flag = 0;
-	// verifica se a soma das diagonais é igual	
+	// verifica se a soma das diagonais é igual
 	if (soma_diagonalP != soma/COLUNA) flag = 0;
 	if (soma_diagonalS != soma/COLUNA) flag = 0;
-		
+
 	printf("\n\nSoma da diagonal principal: %d\n", soma_diagonalP);
 	printf("Soma da diagonal secundaria: %d\n\n", soma_diagonalS);
 
