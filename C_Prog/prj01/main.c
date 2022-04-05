@@ -4,6 +4,7 @@
 #include <locale.h>
 #include "lib.h"
 
+
 int main()
 {
   setlocale(LC_ALL, "portuguese");

@@ -69,10 +69,18 @@ int main()
             }
         break;
         case 3: // Remover
-
+            aux = inicio;
+            inicio = aux.prox;
+            free(aux);
         break;
         case 4: // Esvaziar
+          Cliente *proximo;
 
+          while (aux != NULL) {
+            proximo = aux->prox;
+            free(aux);
+            aux = proximo;
+          }
         break;
         case 5: // Sair
 
