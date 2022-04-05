@@ -32,24 +32,24 @@ int main()
         {
         case 1: // Inserir
 
-            // alocaÁ„o do novo elemento
+            // aloca√ß√£o do novo elemento
             aux = (Pessoa *)malloc(sizeof(Pessoa));
             if(aux == NULL)
             {
                 printf("Sem Memoria.");
-                exit(1); // SaÌda forÁada do programa
+                exit(1); // Sa√≠da for√ßada do programa
             }
 
-            // InserÁ„o dos dados
+            // Inser√ß√£o dos dados
             printf("Digite o RA: ");
             scanf("%d", &aux->RA);
 
             aux->prox = NULL;
 
-            // Se inserÁ„o do primeiro elemento
+            // Se inser√ß√£o do primeiro elemento
             if(inicio == NULL)
                 inicio = aux;
-            else // Se inserÁ„o de outro elemento
+            else // Se inser√ß√£o de outro elemento
                 fim->prox = aux;
 
             fim = aux;
@@ -61,7 +61,7 @@ int main()
             else
             {
                 aux = inicio; // aux vai para o inicio da lista
-                while(aux != NULL) // Loop atÈ o fim da lista
+                while(aux != NULL) // Loop at√© o fim da lista
                 {
                     printf("RA: %d", aux->RA);
                     aux = aux->prox;
@@ -69,6 +69,7 @@ int main()
             }
         break;
         case 3: // Remover
+<<<<<<< HEAD
             aux = inicio;
             inicio = aux.prox;
             free(aux);
@@ -81,16 +82,43 @@ int main()
             free(aux);
             aux = proximo;
           }
+=======
+            if(inicio == NULL)
+                printf("Fila Vazia");
+            else {
+                aux = inicio->prox;
+                free(inicio);
+                inicio = aux;
+        }
+        break;
+        case 4: // Esvaziar
+            // Se lista for vazia
+            if (inicio == NULL) printf("Lista vazia.");
+            else
+            {
+                while(inicio != NULL) // Loop at√© o fim da lista
+                {
+                    aux = inicio->prox;
+                    free(inicio);
+                    inicio = aux;
+                }
+            }
+>>>>>>> 65c10822a66d3d51971a654f203fc12ce3348139
         break;
         case 5: // Sair
+            while(inicio != NULL) // Loop at√© o fim da lista
+                {
+                    aux = inicio->prox;
+                    free(inicio);
+                    inicio = aux;
+                }
 
         break;
         default:
+            printf("Op√ß√£o Inv√°lida.");
         break;
         }
     } while (op != '5');
-
-
 
     getchar();
     return 0;
