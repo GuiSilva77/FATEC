@@ -3,6 +3,7 @@
 #include <time.h>
 #include <conio.h>
 #include <string.h>
+#include <stdint.h>
 #include "types.h"
 /**
  * @brief Função que inicializa os dados do programa
@@ -18,6 +19,17 @@ banco_dados* start_program();
  */
 void end_program(banco_dados**);
 int dashboard(banco_dados**);
+void lancamento(banco_dados**);
+
+banco_dados* start_program()
+{
+    return (banco_dados* )malloc(sizeof(banco_dados));
+}
+
+void end_program(banco_dados** db)
+{
+    free(*db);
+}
 
 int dashboard(banco_dados** db)
 {
@@ -41,7 +53,7 @@ int dashboard(banco_dados** db)
             lancamento(&db);
         break;
         case '2':
-            verificar_lançamento(&db);
+            verificar_lancamento(&db);
         break;
         case '3':
             gerar_balanco(db);
@@ -53,5 +65,16 @@ int dashboard(banco_dados** db)
         break;
     }
     return 1;
+}
+
+void lancamento(banco_dados** db) 
+{
+    uint8_t data;
+    struct diary_node lancamento;
+    system("cls");
+    printf("Digite a data do Lançamento (dd-mm-yyyy): ");
+    scanf("%d", &data);
+    insert_date(lancamento.date, data);
+
 }
 
