@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "tipos.h": "c",
+        "lib.h": "c",
+        "diario_tipos.h": "c"
+    }
+}

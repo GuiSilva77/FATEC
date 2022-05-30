@@ -17,9 +17,14 @@ void remover(Aluno**);
 void esvaziar(Aluno**, Aluno**);
 char* inputString();
 Aluno* pesquisar_no(Aluno*, int);
+Aluno* novo_aluno();
 
-void adicionar(Aluno **inicio, Aluno **fim)
-{
+void adicionar_inicio(Aluno**);
+void adicionar_fim(Aluno**);
+void remover_inicio(Aluno**);
+void remover_fim(Aluno*);
+
+Aluno* novo_aluno() {
 	Aluno *aux;
 	aux = (Aluno *)malloc(sizeof(Aluno));
 	if (aux == NULL)
@@ -39,12 +44,19 @@ void adicionar(Aluno **inicio, Aluno **fim)
 
 	aux->prox = NULL;
 
-	if (*(inicio) == NULL)
-		*(inicio) = aux;
-	else
-		(*fim)->prox = aux;
+	return aux;
+}
 
-	*(fim) = aux;
+void adicionar(Aluno **inicio, Aluno **fim)
+{
+	Aluno *novo = novo_aluno();
+
+	if (*(inicio) == NULL)
+		*(inicio) = novo;
+	else
+		(*fim)->prox = novo;
+
+	*(fim) = novo;
 }
 
 void listar(Aluno *inicio)
@@ -125,4 +137,44 @@ char *inputString()
 		string[len - 1] = '\0';
 	}
 	return string;
+}
+
+void adicionar_inicio(Aluno **inicio)
+{
+	Aluno *novo = novo_aluno();
+
+	novo->prox = *(inicio);
+	*(inicio) = novo;
+}
+
+void adicionar_fim(Aluno **inicio)
+{ 
+	Aluno *novo = novo_aluno();
+
+	if (*(inicio) == NULL)
+		*(inicio) = novo;
+	else
+	{
+		Aluno *aux = *(inicio);
+		while (aux->prox != NULL)
+			aux = aux->prox;
+		
+		aux->prox = novo;
+	}
+}
+
+void remover_inicio(Aluno **inicio)
+{
+	Aluno *aux = *(inicio);
+	*(inicio) = aux->prox;
+	free(aux);
+}
+
+void remover_fim(Aluno *inicio)
+{
+	while (inicio->prox->prox != NULL)
+		inicio = inicio->prox;
+	
+	free(inicio->prox);
+	inicio->prox = NULL;
 }

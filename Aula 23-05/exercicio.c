@@ -16,7 +16,11 @@ int main()
             "2- Adicionar Aluno;\n"
             "3- Remover Aluno;\n"
             "4- Esvaziar Lista de Alunos;\n"
-            "5- Sair;\n\nOpcao: ");
+			"5- Adicionar Inicio;\n"
+			"6- Adicionar Fim;\n"
+			"7- remover Inicio;\n"
+			"8- remover Fim;\n"
+            "9- Sair;\n\nOpcao: ");
 
 		op = getchar();
 
@@ -37,11 +41,27 @@ int main()
 		case '4': // esvaziar;
 			esvaziar(&inicio, &fim);
 			break;
+		
+		case '5': // adicionar inicio
+			adicionar_inicio(&inicio);
+			break;
+
+		case '6': // adicionar fim
+			adicionar_fim(&inicio);
+			break;
+
+		case '7': // remover inicio
+			remover_inicio(&inicio);
+			break;
+
+		case '8': // remover fim
+			remover_fim(inicio);
+			break;
 
 		default:
 			break;
 		}
-	} while (op != '5');
+	} while (op != '9');
 
 	esvaziar(&inicio, &fim);
 	getchar();
